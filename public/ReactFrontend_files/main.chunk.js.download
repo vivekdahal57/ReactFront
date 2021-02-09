@@ -1,0 +1,2284 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/index.css ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n.navigation ul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  border: 1px solid #e7e7e7;\n  background-color: #f3f3f3;\n}\n\n.navigation li {\n  float: left;\n}\n\n.navigation li a {\n  display: block;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n}\n\n.navigation li a:hover:not(.active) {\n  background-color: #ddd;\n}\n\n.navigation li a.active:hover {\n  color: white;\n  background-color: #007ad9;\n}\n.navigation li a.active {\n  color: white;\n  background-color: #007ad9;\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Login */ "./src/components/Login.js");
+/* harmony import */ var _components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/PrivateRoute */ "./src/components/PrivateRoute.js");
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Home */ "./src/components/Home.js");
+/* harmony import */ var _components_About__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/About */ "./src/components/About.js");
+/* harmony import */ var _components_Contact__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Contact */ "./src/components/Contact.js");
+/* harmony import */ var _components_users_Users__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/users/Users */ "./src/components/users/Users.js");
+/* harmony import */ var _components_users_AddUsers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/users/AddUsers */ "./src/components/users/AddUsers.js");
+/* harmony import */ var _components_users_EditUsers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/users/EditUsers */ "./src/components/users/EditUsers.js");
+/* harmony import */ var _components_Error__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Error */ "./src/components/Error.js");
+/* harmony import */ var primereact_resources_themes_nova_light_theme_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! primereact/resources/themes/nova-light/theme.css */ "./node_modules/primereact/resources/themes/nova-light/theme.css");
+/* harmony import */ var primereact_resources_themes_nova_light_theme_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(primereact_resources_themes_nova_light_theme_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var primereact_resources_primereact_min_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! primereact/resources/primereact.min.css */ "./node_modules/primereact/resources/primereact.min.css");
+/* harmony import */ var primereact_resources_primereact_min_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(primereact_resources_primereact_min_css__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var primeicons_primeicons_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! primeicons/primeicons.css */ "./node_modules/primeicons/primeicons.css");
+/* harmony import */ var primeicons_primeicons_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(primeicons_primeicons_css__WEBPACK_IMPORTED_MODULE_13__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\App.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function App() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, !JSON.parse(localStorage.getItem('accessToken')) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/",
+    exact: true,
+    component: _components_Login__WEBPACK_IMPORTED_MODULE_2__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }), JSON.parse(localStorage.getItem('accessToken')) && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/",
+    exact: true,
+    component: _components_Home__WEBPACK_IMPORTED_MODULE_4__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    path: "/home",
+    component: _components_Home__WEBPACK_IMPORTED_MODULE_4__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    path: "/about",
+    component: _components_About__WEBPACK_IMPORTED_MODULE_5__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    path: "/contact",
+    component: _components_Contact__WEBPACK_IMPORTED_MODULE_6__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    path: "/users",
+    component: _components_users_Users__WEBPACK_IMPORTED_MODULE_7__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    path: "/addUser",
+    component: _components_users_AddUsers__WEBPACK_IMPORTED_MODULE_8__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    path: "/editUser",
+    component: _components_users_EditUsers__WEBPACK_IMPORTED_MODULE_9__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_PrivateRoute__WEBPACK_IMPORTED_MODULE_3__["PrivateRoute"], {
+    component: _components_Error__WEBPACK_IMPORTED_MODULE_10__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./src/components/About.js":
+/*!*********************************!*\
+  !*** ./src/components/About.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.js");
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\About.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+const About = () => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, "About Page"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (About);
+
+/***/ }),
+
+/***/ "./src/components/Contact.js":
+/*!***********************************!*\
+  !*** ./src/components/Contact.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.js");
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\Contact.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+const Contact = () => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, "Contact Page"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Contact);
+
+/***/ }),
+
+/***/ "./src/components/Error.js":
+/*!*********************************!*\
+  !*** ./src/components/Error.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\Error.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+const Error = () => {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, "Error: Path does not exist"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Error);
+
+/***/ }),
+
+/***/ "./src/components/Home.js":
+/*!********************************!*\
+  !*** ./src/components/Home.js ***!
+  \********************************/
+/*! exports provided: Home, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Home", function() { return Home; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.js");
+/* harmony import */ var _service_CarService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/CarService */ "./src/service/CarService.js");
+/* harmony import */ var primereact_column__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/column */ "./node_modules/primereact/column.js");
+/* harmony import */ var primereact_column__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(primereact_column__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var primereact_datatable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/datatable */ "./node_modules/primereact/datatable.js");
+/* harmony import */ var primereact_datatable__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(primereact_datatable__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\Home.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+
+
+class Home extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      cars: [],
+      books: [],
+      users: []
+    };
+    this.carservice = new _service_CarService__WEBPACK_IMPORTED_MODULE_2__["CarService"]();
+  }
+
+  componentDidMount() {
+    this.carservice.getCarsSmall().then(data => this.setState({
+      cars: data
+    }));
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12 p-lg-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "card",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_datatable__WEBPACK_IMPORTED_MODULE_4__["DataTable"], {
+      value: this.state.cars,
+      style: {
+        marginBottom: '20px'
+      },
+      responsive: true,
+      header: "Car Info",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_3__["Column"], {
+      field: "vin",
+      header: "Vin",
+      sortable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_3__["Column"], {
+      field: "year",
+      header: "Year",
+      sortable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_3__["Column"], {
+      field: "brand",
+      header: "Brand",
+      sortable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_3__["Column"], {
+      field: "color",
+      header: "Color",
+      sortable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    })))));
+  }
+
+}
+;
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./src/components/Login.js":
+/*!*********************************!*\
+  !*** ./src/components/Login.js ***!
+  \*********************************/
+/*! exports provided: Login, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return Login; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _service_UserService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/UserService */ "./src/service/UserService.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primereact/inputtext */ "./node_modules/primereact/inputtext.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(primereact_inputtext__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/panel */ "./node_modules/primereact/panel.js");
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(primereact_panel__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/growl */ "./node_modules/primereact/growl.js");
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(primereact_growl__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primereact/button */ "./node_modules/primereact/button.js");
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(primereact_button__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\Login.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+
+
+
+class Login extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: null,
+      password: null,
+      loading: false
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const _e$target = e.target,
+          id = _e$target.id,
+          value = _e$target.value;
+    this.setState({
+      [id]: value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const _this$state = this.state,
+          username = _this$state.username,
+          password = _this$state.password;
+
+    if (!username || !password) {
+      this.growl.show({
+        severity: 'error',
+        summary: 'Error!!',
+        detail: 'Username and/or password is invalid!!'
+      });
+    } else {
+      this.setState({
+        loading: true
+      });
+      _service_UserService__WEBPACK_IMPORTED_MODULE_1__["userService"].login(username, password).then(user => {
+        const _ref = this.props.location.state || {
+          from: {
+            pathname: "/home"
+          }
+        },
+              from = _ref.from;
+
+        this.props.history.push(from);
+      }, fail => {
+        this.growl.show({
+          severity: 'error',
+          summary: 'Error!!',
+          detail: 'Username and/or Password Mismatch!!'
+        });
+      });
+    }
+  }
+
+  render() {
+    const _this$state2 = this.state,
+          username = _this$state2.username,
+          password = _this$state2.password;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-fluid",
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '100%'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_growl__WEBPACK_IMPORTED_MODULE_4__["Growl"], {
+      ref: el => this.growl = el,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_panel__WEBPACK_IMPORTED_MODULE_3__["Panel"], {
+      header: "Login",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-grid",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_2__["InputText"], {
+      id: "username",
+      defaultValue: username,
+      type: "text",
+      placeholder: "Username",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_2__["InputText"], {
+      id: "password",
+      defaultValue: password,
+      style: {
+        marginTop: 20
+      },
+      type: "password",
+      placeholder: "Password",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12",
+      style: {
+        marginTop: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      type: "submit",
+      label: "Submit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 81
+      },
+      __self: this
+    }))))));
+  }
+
+}
+/* harmony default export */ __webpack_exports__["default"] = (Login);
+
+/***/ }),
+
+/***/ "./src/components/Navigation.js":
+/*!**************************************!*\
+  !*** ./src/components/Navigation.js ***!
+  \**************************************/
+/*! exports provided: Navigation, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Navigation", function() { return Navigation; });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _service_UserService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/UserService */ "./src/service/UserService.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\Navigation.js";
+
+
+
+class Navigation extends react__WEBPACK_IMPORTED_MODULE_2__["Component"] {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      style: {
+        backgroundColor: "#000000"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
+      alt: "logo",
+      height: "50px",
+      src: "primereact-logo.png",
+      style: {
+        marginLeft: '3px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", {
+      style: {
+        float: "right",
+        color: '#ffffff',
+        marginRight: '16px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, "Welcome ", JSON.parse(localStorage.getItem('user')))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: "navigation",
+      style: {
+        clear: "both",
+        marginTop: '15px'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["NavLink"], {
+      to: "/home",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }, "Home")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["NavLink"], {
+      to: "/about",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, "About")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["NavLink"], {
+      to: "/users",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, "Users")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["NavLink"], {
+      to: "/contact",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }, "Contact")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
+      style: {
+        float: "right"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["NavLink"], {
+      to: "/logout",
+      onClick: _service_UserService__WEBPACK_IMPORTED_MODULE_1__["userService"].logout,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, "Logout")))));
+  }
+
+}
+;
+/* harmony default export */ __webpack_exports__["default"] = (Navigation);
+
+/***/ }),
+
+/***/ "./src/components/PrivateRoute.js":
+/*!****************************************!*\
+  !*** ./src/components/PrivateRoute.js ***!
+  \****************************************/
+/*! exports provided: PrivateRoute */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivateRoute", function() { return PrivateRoute; });
+/* harmony import */ var D_Projects_reactfront_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\PrivateRoute.js";
+
+/**
+ * Created by i82325 on 5/7/2019.
+ */
+
+
+const PrivateRoute = (_ref) => {
+  let Component = _ref.component,
+      rest = Object(D_Projects_reactfront_node_modules_babel_preset_react_app_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["component"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], Object.assign({}, rest, {
+    render: props => localStorage.getItem('accessToken') ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, Object.assign({}, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: undefined
+    })) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+      to: {
+        pathname: '/',
+        state: {
+          from: '/home'
+        }
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: undefined
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }));
+};
+
+/***/ }),
+
+/***/ "./src/components/users/AddUsers.js":
+/*!******************************************!*\
+  !*** ./src/components/users/AddUsers.js ***!
+  \******************************************/
+/*! exports provided: AddUsers, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddUsers", function() { return AddUsers; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Navigation */ "./src/components/Navigation.js");
+/* harmony import */ var _service_UserService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/UserService */ "./src/service/UserService.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/inputtext */ "./node_modules/primereact/inputtext.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primereact/panel */ "./node_modules/primereact/panel.js");
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(primereact_panel__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primereact/growl */ "./node_modules/primereact/growl.js");
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(primereact_growl__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! primereact/button */ "./node_modules/primereact/button.js");
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(primereact_button__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var primereact_dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! primereact/dropdown */ "./node_modules/primereact/dropdown.js");
+/* harmony import */ var primereact_dropdown__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(primereact_dropdown__WEBPACK_IMPORTED_MODULE_8__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\users\\AddUsers.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+
+
+
+
+
+
+class AddUsers extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: null,
+      lastName: null,
+      userName: null,
+      password: null,
+      email: null,
+      permissionLevel: null
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const _e$target = e.target,
+          id = _e$target.id,
+          value = _e$target.value;
+    this.setState({
+      [id]: value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const _this$state = this.state,
+          firstName = _this$state.firstName,
+          lastName = _this$state.lastName,
+          userName = _this$state.userName,
+          password = _this$state.password,
+          email = _this$state.email,
+          permissionLevel = _this$state.permissionLevel;
+
+    if (!firstName || !lastName || !userName || !password || !email || !permissionLevel) {
+      this.growl.show({
+        severity: 'error',
+        summary: 'Error!!',
+        detail: 'Field/s should not be blank to create a user!!'
+      });
+    } else {
+      let code = this.state.permissionLevel.code;
+      this.setState({
+        permissionLevel: code
+      }, () => {
+        _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].createUser(this.state).then(data => {
+          if (data.error) {
+            this.growl.show({
+              severity: 'error',
+              summary: 'Error!!',
+              detail: data.error
+            });
+          } else {
+            const _ref = this.props.location.state || {
+              from: {
+                pathname: "/users"
+              }
+            },
+                  from = _ref.from;
+
+            localStorage.setItem('success', JSON.stringify("User has been created!!!"));
+            this.props.history.push(from);
+          }
+        });
+      });
+    }
+  }
+
+  render() {
+    const _this$state2 = this.state,
+          firstName = _this$state2.firstName,
+          lastName = _this$state2.lastName,
+          userName = _this$state2.userName,
+          password = _this$state2.password,
+          email = _this$state2.email,
+          permissionLevel = _this$state2.permissionLevel;
+    const permissions = [{
+      name: 'Admin',
+      code: "2048"
+    }, {
+      name: 'Paid',
+      code: "4"
+    }, {
+      name: 'Normal',
+      code: "1"
+    }];
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 78
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12 p-lg-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      to: "/users",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 80
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      label: "Back",
+      icon: "pi pi-arrow-left",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 81
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_growl__WEBPACK_IMPORTED_MODULE_6__["Growl"], {
+      ref: el => this.growl = el,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 84
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_panel__WEBPACK_IMPORTED_MODULE_5__["Panel"], {
+      header: "Add User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 85
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 86
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-grid",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "firstName",
+      defaultValue: firstName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "FirstName",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "lastName",
+      defaultValue: lastName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "LastName",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "userName",
+      defaultValue: userName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "Username",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "password",
+      defaultValue: password,
+      style: {
+        margin: 20
+      },
+      type: "password",
+      placeholder: "Password",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "email",
+      defaultValue: email,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "Email",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 112
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_dropdown__WEBPACK_IMPORTED_MODULE_8__["Dropdown"], {
+      id: "permissionLevel",
+      value: permissionLevel,
+      options: permissions,
+      onChange: this.handleChange,
+      placeholder: "Select a Role",
+      optionLabel: "name",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      type: "submit",
+      label: "Add User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126
+      },
+      __self: this
+    })))))));
+  }
+
+}
+;
+/* harmony default export */ __webpack_exports__["default"] = (AddUsers);
+
+/***/ }),
+
+/***/ "./src/components/users/EditUsers.js":
+/*!*******************************************!*\
+  !*** ./src/components/users/EditUsers.js ***!
+  \*******************************************/
+/*! exports provided: EditUsers, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditUsers", function() { return EditUsers; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Navigation */ "./src/components/Navigation.js");
+/* harmony import */ var _service_UserService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/UserService */ "./src/service/UserService.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/inputtext */ "./node_modules/primereact/inputtext.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primereact/panel */ "./node_modules/primereact/panel.js");
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(primereact_panel__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primereact/growl */ "./node_modules/primereact/growl.js");
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(primereact_growl__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! primereact/button */ "./node_modules/primereact/button.js");
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(primereact_button__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\users\\EditUsers.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+
+
+
+
+
+class EditUsers extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      oldPassword: null,
+      newPassword: null
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const _e$target = e.target,
+          id = _e$target.id,
+          value = _e$target.value;
+    this.setState({
+      [id]: value
+    });
+  }
+
+  handlePasswordSubmit(e) {
+    e.preventDefault();
+    const _this$state = this.state,
+          oldPassword = _this$state.oldPassword,
+          newPassword = _this$state.newPassword;
+
+    if (!oldPassword || !newPassword) {
+      this.growl.show({
+        severity: 'error',
+        summary: 'Error!!',
+        detail: 'Field/s should not be blank to Change Password!!'
+      });
+    } else {
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].changePassword(this.state._id, oldPassword, newPassword).then(data => {
+        if (data.error) {
+          this.growl.show({
+            severity: 'error',
+            summary: 'Error!!',
+            detail: data.error
+          });
+        } else {
+          this.growl.show({
+            severity: 'success',
+            summary: 'Success!!',
+            detail: data.message
+          });
+        }
+      });
+    }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const _this$state2 = this.state,
+          firstName = _this$state2.firstName,
+          lastName = _this$state2.lastName,
+          email = _this$state2.email;
+
+    if (!firstName || !lastName || !email) {
+      this.growl.show({
+        severity: 'error',
+        summary: 'Error!!',
+        detail: 'Field/s should not be blank to create a user!!'
+      });
+    } else {
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].updateUser(this.state).then(data => {
+        if (data.error) {
+          this.growl.show({
+            severity: 'error',
+            summary: 'Error!!',
+            detail: data.error
+          });
+        } else {
+          const _ref = this.props.location.state || {
+            from: {
+              pathname: "/users"
+            }
+          },
+                from = _ref.from;
+
+          localStorage.setItem('success', JSON.stringify("User has been Updated!!!"));
+          this.props.history.push(from);
+        }
+      });
+    }
+  }
+
+  componentDidMount() {
+    let id = null;
+    console.log(this.props.location.changePassword);
+
+    if (this.props.location.rowData) {
+      id = this.props.location.rowData._id;
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].getUser(id).then(data => {
+        this.setState({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          userName: data.userName,
+          password: data.password,
+          email: data.email,
+          _id: data.id
+        });
+      });
+    } else {
+      this.props.history.push({
+        pathname: '/users'
+      });
+    }
+  }
+
+  render() {
+    const _this$state3 = this.state,
+          newPassword = _this$state3.newPassword,
+          oldPassword = _this$state3.oldPassword;
+    const _this$state4 = this.state,
+          firstName = _this$state4.firstName,
+          lastName = _this$state4.lastName,
+          email = _this$state4.email;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12 p-lg-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 119
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      to: "/users",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      label: "Back",
+      icon: "pi pi-arrow-left",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 121
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 123
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_growl__WEBPACK_IMPORTED_MODULE_6__["Growl"], {
+      ref: el => this.growl = el,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_panel__WEBPACK_IMPORTED_MODULE_5__["Panel"], {
+      header: "Edit User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 125
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-grid",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "firstName",
+      defaultValue: firstName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "FirstName",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 128
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "lastName",
+      defaultValue: lastName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "LastName",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 134
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "email",
+      defaultValue: email,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "Email",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 146
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      type: "submit",
+      label: "Update User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 148
+      },
+      __self: this
+    }))))), this.props.location.changePassword === true & react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_panel__WEBPACK_IMPORTED_MODULE_5__["Panel"], {
+      header: "Edit User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handlePasswordSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 155
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-grid",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 156
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "oldPassword",
+      defaultValue: oldPassword,
+      style: {
+        margin: 20
+      },
+      type: "password",
+      placeholder: "Old Password",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 157
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "newPassword",
+      defaultValue: newPassword,
+      style: {
+        margin: 20
+      },
+      type: "password",
+      placeholder: "New Password",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 163
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 169
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      type: "submit",
+      label: "Update Password",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 171
+      },
+      __self: this
+    })))))));
+  }
+
+}
+;
+/* harmony default export */ __webpack_exports__["default"] = (EditUsers);
+
+/***/ }),
+
+/***/ "./src/components/users/Users.js":
+/*!***************************************!*\
+  !*** ./src/components/users/Users.js ***!
+  \***************************************/
+/*! exports provided: Users, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Users", function() { return Users; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Navigation */ "./src/components/Navigation.js");
+/* harmony import */ var _service_UserService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/UserService */ "./src/service/UserService.js");
+/* harmony import */ var primereact_datatable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/datatable */ "./node_modules/primereact/datatable.js");
+/* harmony import */ var primereact_datatable__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(primereact_datatable__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var primereact_column__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primereact/column */ "./node_modules/primereact/column.js");
+/* harmony import */ var primereact_column__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(primereact_column__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primereact/button */ "./node_modules/primereact/button.js");
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(primereact_button__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! primereact/growl */ "./node_modules/primereact/growl.js");
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(primereact_growl__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! primereact/inputtext */ "./node_modules/primereact/inputtext.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(primereact_inputtext__WEBPACK_IMPORTED_MODULE_8__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\users\\Users.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+
+
+
+
+
+
+class Users extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      users: []
+    };
+    this.actionTemplate = this.actionTemplate.bind(this);
+  }
+
+  componentDidMount() {
+    _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].getAll().then(data => this.setState({
+      users: data
+    }));
+    let message = JSON.parse(localStorage.getItem('success'));
+
+    if (message) {
+      this.growl.show({
+        severity: 'success',
+        summary: 'Success!!',
+        detail: message
+      });
+      localStorage.removeItem('success');
+    }
+  }
+
+  actionTemplate(rowData) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+      type: "button",
+      icon: "pi pi-pencil",
+      style: {
+        margin: 2
+      },
+      className: "ui-button-success",
+      onClick: () => this.editUser(rowData),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }), localStorage.getItem('permissionLevel') & 2048 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+      type: "submit",
+      icon: "pi pi-trash",
+      className: "ui-button-warning",
+      onClick: () => this.deleteUser(rowData),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }) : null);
+  }
+
+  editUser(rowData) {
+    let changePassword = null;
+
+    if (JSON.parse(localStorage.getItem('userId')) === rowData._id) {
+      changePassword = true;
+    } else {
+      changePassword = false;
+    }
+
+    this.props.history.push({
+      pathname: '/editUser',
+      rowData: rowData,
+      // your data array of objects,
+      changePassword: changePassword
+    });
+  }
+
+  deleteUser(rowData) {
+    var msg = 'Are you sure You want to delete user ' + rowData._id;
+
+    if (window.confirm(msg)) {
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].deleteUser(rowData._id).then(() => {
+        this.growl.show({
+          severity: 'success',
+          summary: 'Success!!',
+          detail: 'User Deleted!!'
+        });
+      });
+    }
+
+    this.componentDidMount();
+  }
+
+  render() {
+    var header = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        'textAlign': 'left',
+        'float': 'right'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 85
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "pi pi-search",
+      style: {
+        margin: '4px 4px 0 0'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 86
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_8__["InputText"], {
+      type: "search",
+      onInput: e => this.setState({
+        globalFilter: e.target.value
+      }),
+      placeholder: "Search",
+      size: "50",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87
+      },
+      __self: this
+    }));
+    this.state.users.forEach(function (item) {
+      if (item.permissionLevel === 2048 || item.permissionLevel === '2048') {
+        item.permissionLevel = 'Admin';
+      } else if (item.permissionLevel === 1 || item.permissionLevel === '1') {
+        item.permissionLevel = 'Normal';
+      } else if (item.permissionLevel === 4 || item.permissionLevel === '4') {
+        item.permissionLevel = 'Premium';
+      }
+    });
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_growl__WEBPACK_IMPORTED_MODULE_7__["Growl"], {
+      ref: el => this.growl = el,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 104
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12 p-lg-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 107
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      to: "/addUser",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_6__["Button"], {
+      label: "Create User",
+      icon: "pi pi-check",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 109
+      },
+      __self: this
+    })), header, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 112
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "card",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 113
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_datatable__WEBPACK_IMPORTED_MODULE_4__["DataTable"], {
+      value: this.state.users,
+      header: "Users List",
+      style: {
+        marginBottom: '20px'
+      },
+      paginator: true,
+      rows: 10,
+      rowsPerPageOptions: [5, 10, 20],
+      globalFilter: this.state.globalFilter,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 114
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      field: "firstName",
+      header: "First Name",
+      sortable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      field: "lastName",
+      header: "Last Name",
+      sortable: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 122
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      field: "userName",
+      header: "User Name",
+      sortable: true,
+      style: {
+        overflow: 'hidden'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      field: "email",
+      header: "Email",
+      sortable: true,
+      style: {
+        overflow: 'hidden'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      field: "permissionLevel",
+      header: "Permission",
+      sortable: true,
+      style: {
+        overflow: 'hidden'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 130
+      },
+      __self: this
+    }), localStorage.getItem('permissionLevel') & (4 | 2048) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      body: this.actionTemplate,
+      header: "Actions",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 134
+      },
+      __self: this
+    }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_column__WEBPACK_IMPORTED_MODULE_5__["Column"], {
+      body: this.actionTemplate,
+      header: "Actions",
+      style: {
+        display: 'none'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 136
+      },
+      __self: this
+    })))));
+  }
+
+}
+;
+/* harmony default export */ __webpack_exports__["default"] = (Users);
+
+/***/ }),
+
+/***/ "./src/helper/auth-header.js":
+/*!***********************************!*\
+  !*** ./src/helper/auth-header.js ***!
+  \***********************************/
+/*! exports provided: authHeader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authHeader", function() { return authHeader; });
+function authHeader() {
+  let accessToken = JSON.parse(localStorage.getItem('accessToken'));
+
+  if (accessToken) {
+    return {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + accessToken
+    };
+  } else {
+    return {};
+  }
+}
+
+/***/ }),
+
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css", function() {
+		var newContent = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var _serviceWorker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./serviceWorker */ "./src/serviceWorker.js");
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\index.js";
+
+
+
+
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7
+  },
+  __self: undefined
+}), document.getElementById('root')); // If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+
+_serviceWorker__WEBPACK_IMPORTED_MODULE_4__["unregister"]();
+
+/***/ }),
+
+/***/ "./src/service/CarService.js":
+/*!***********************************!*\
+  !*** ./src/service/CarService.js ***!
+  \***********************************/
+/*! exports provided: CarService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarService", function() { return CarService; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * Created by i82325 on 5/8/2019.
+ */
+
+class CarService {
+  getCarsSmall() {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('data/cars-small.json').then(res => res.data.data);
+  }
+
+}
+
+/***/ }),
+
+/***/ "./src/service/ResponseService.js":
+/*!****************************************!*\
+  !*** ./src/service/ResponseService.js ***!
+  \****************************************/
+/*! exports provided: handleResponse */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleResponse", function() { return handleResponse; });
+/**
+ * Created by i82325 on 5/31/2019.
+ */
+const handleResponse = function (response) {
+  return response.text().then(text => {
+    const data = text && JSON.parse(text);
+
+    if (!response.ok) {
+      if (response.status === 401) {
+        // auto logout if 401 response returned from api
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        window.location.reload();
+      }
+
+      const error = data && data.message || response.statusText;
+      return Promise.reject(error);
+    }
+
+    return data;
+  });
+};
+
+/***/ }),
+
+/***/ "./src/service/UserService.js":
+/*!************************************!*\
+  !*** ./src/service/UserService.js ***!
+  \************************************/
+/*! exports provided: userService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userService", function() { return userService; });
+/* harmony import */ var _helper_auth_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper/auth-header */ "./src/helper/auth-header.js");
+/* harmony import */ var _ResponseService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ResponseService */ "./src/service/ResponseService.js");
+/**
+ * Created by i82325 on 5/7/2019.
+ */
+
+
+const userService = {
+  login,
+  logout,
+  getAll,
+  createUser,
+  deleteUser,
+  getUser,
+  updateUser,
+  changePassword
+};
+
+async function login(userName, password) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      userName,
+      password
+    }) //this is for post request
+
+  };
+  const response = await fetch('http://localhost:3601/auth', requestOptions);
+  const requestData = await Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+
+  if (requestData.accessToken) {
+    localStorage.setItem('user', JSON.stringify(requestData.name));
+    localStorage.setItem('userId', JSON.stringify(requestData.id));
+    localStorage.setItem('accessToken', JSON.stringify(requestData.accessToken));
+    localStorage.setItem('refreshToken', JSON.stringify(requestData.refreshToken));
+    localStorage.setItem('permissionLevel', JSON.stringify(requestData.permissionLevel));
+  }
+
+  return true;
+}
+
+function logout() {
+  // remove user from local storage to log user out
+  localStorage.removeItem('accessToken');
+  localStorage.removeItem('refreshToken');
+  window.location.reload();
+}
+
+async function getAll() {
+  if (getAccessToken()) {
+    const requestOptions = {
+      method: 'GET',
+      headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])()
+    };
+    const response = await fetch('http://localhost:3601/users?limit=9999', requestOptions);
+    return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+  }
+
+  return null;
+}
+
+async function getUser(_id) {
+  if (getAccessToken()) {
+    const requestOptions = {
+      method: 'GET',
+      headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])()
+    };
+    const response = await fetch('http://localhost:3601/users/' + _id, requestOptions);
+    return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+  }
+
+  return null;
+}
+
+async function createUser(userObject) {
+  if (getAccessToken()) {
+    const requestOptions = {
+      method: 'POST',
+      headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
+      body: JSON.stringify(userObject)
+    };
+    const response = await fetch('http://localhost:3601/users', requestOptions);
+    return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+  }
+
+  return null;
+}
+
+async function deleteUser(_id) {
+  if (getAccessToken()) {
+    const requestOptions = {
+      method: 'DELETE',
+      headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])()
+    };
+    const response = await fetch('http://localhost:3601/users/' + _id, requestOptions);
+    return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+  }
+
+  return null;
+}
+
+async function updateUser(userObject) {
+  if (getAccessToken()) {
+    const requestOptions = {
+      method: 'PATCH',
+      headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
+      body: JSON.stringify(userObject)
+    };
+    const response = await fetch('http://localhost:3601/users/' + userObject._id, requestOptions);
+    return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+  }
+
+  return null;
+}
+
+async function changePassword(_id, oldPassword, newPassword) {
+  if (getAccessToken()) {
+    const requestOptions = {
+      method: 'PATCH',
+      headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
+      body: JSON.stringify(oldPassword, newPassword)
+    };
+    const response = await fetch('http://localhost:3601/users/changePassword/' + _id, requestOptions);
+    return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
+  }
+
+  return null;
+}
+
+async function getAccessToken() {
+  const requestOptions = {
+    method: 'POST',
+    headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
+    body: JSON.stringify({
+      refresh_token: JSON.parse(localStorage.getItem('refreshToken'))
+    }) //this is for post request
+
+  };
+  await fetch('http://localhost:3601/auth/refresh', requestOptions).then(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"]).then(response => {
+    localStorage.setItem('refreshToken', JSON.stringify(response.refreshToken));
+    localStorage.setItem('accessToken', JSON.stringify(response.accessToken));
+  });
+}
+
+/***/ }),
+
+/***/ "./src/serviceWorker.js":
+/*!******************************!*\
+  !*** ./src/serviceWorker.js ***!
+  \******************************/
+/*! exports provided: register, unregister */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unregister", function() { return unregister; });
+// This optional code is used to register a service worker.
+// register() is not called by default.
+// This lets the app load faster on subsequent visits in production, and gives
+// it offline capabilities. However, it also means that developers (and users)
+// will only see deployed updates on subsequent visits to a page, after all the
+// existing tabs open on the page have been closed, since previously cached
+// resources are updated in the background.
+// To learn more about the benefits of this model and instructions on how to
+// opt-in, read https://bit.ly/CRA-PWA
+const isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
+window.location.hostname === '[::1]' || // 127.0.0.1/8 is considered localhost for IPv4.
+window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+function register(config) {
+  if (false) {}
+}
+
+function registerValidSW(swUrl, config) {
+  navigator.serviceWorker.register(swUrl).then(registration => {
+    registration.onupdatefound = () => {
+      const installingWorker = registration.installing;
+
+      if (installingWorker == null) {
+        return;
+      }
+
+      installingWorker.onstatechange = () => {
+        if (installingWorker.state === 'installed') {
+          if (navigator.serviceWorker.controller) {
+            // At this point, the updated precached content has been fetched,
+            // but the previous service worker will still serve the older
+            // content until all client tabs are closed.
+            console.log('New content is available and will be used when all ' + 'tabs for this page are closed. See https://bit.ly/CRA-PWA.'); // Execute callback
+
+            if (config && config.onUpdate) {
+              config.onUpdate(registration);
+            }
+          } else {
+            // At this point, everything has been precached.
+            // It's the perfect time to display a
+            // "Content is cached for offline use." message.
+            console.log('Content is cached for offline use.'); // Execute callback
+
+            if (config && config.onSuccess) {
+              config.onSuccess(registration);
+            }
+          }
+        }
+      };
+    };
+  }).catch(error => {
+    console.error('Error during service worker registration:', error);
+  });
+}
+
+function checkValidServiceWorker(swUrl, config) {
+  // Check if the service worker can be found. If it can't reload the page.
+  fetch(swUrl).then(response => {
+    // Ensure service worker exists, and that we really are getting a JS file.
+    const contentType = response.headers.get('content-type');
+
+    if (response.status === 404 || contentType != null && contentType.indexOf('javascript') === -1) {
+      // No service worker found. Probably a different app. Reload the page.
+      navigator.serviceWorker.ready.then(registration => {
+        registration.unregister().then(() => {
+          window.location.reload();
+        });
+      });
+    } else {
+      // Service worker found. Proceed as normal.
+      registerValidSW(swUrl, config);
+    }
+  }).catch(() => {
+    console.log('No internet connection found. App is running in offline mode.');
+  });
+}
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    });
+  }
+}
+
+/***/ }),
+
+/***/ 0:
+/*!**********************************************************************************!*\
+  !*** multi ./node_modules/react-dev-utils/webpackHotDevClient.js ./src/index.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! D:\Projects\reactfront\node_modules\react-dev-utils\webpackHotDevClient.js */"./node_modules/react-dev-utils/webpackHotDevClient.js");
+module.exports = __webpack_require__(/*! D:\Projects\reactfront\src\index.js */"./src/index.js");
+
+
+/***/ })
+
+},[[0,"runtime~main",1]]]);
+//# sourceMappingURL=main.chunk.js.map

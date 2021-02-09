@@ -1,0 +1,374 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/users/EditUsers.js":
+/*!*******************************************!*\
+  !*** ./src/components/users/EditUsers.js ***!
+  \*******************************************/
+/*! exports provided: EditUsers, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditUsers", function() { return EditUsers; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Navigation */ "./src/components/Navigation.js");
+/* harmony import */ var _service_UserService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/UserService */ "./src/service/UserService.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/inputtext */ "./node_modules/primereact/inputtext.js");
+/* harmony import */ var primereact_inputtext__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primereact/panel */ "./node_modules/primereact/panel.js");
+/* harmony import */ var primereact_panel__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(primereact_panel__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! primereact/growl */ "./node_modules/primereact/growl.js");
+/* harmony import */ var primereact_growl__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(primereact_growl__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! primereact/button */ "./node_modules/primereact/button.js");
+/* harmony import */ var primereact_button__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(primereact_button__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "D:\\Projects\\reactfront\\src\\components\\users\\EditUsers.js";
+
+/**
+ * Created by i82325 on 5/6/2019.
+ */
+
+
+
+
+
+
+
+
+class EditUsers extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      oldPassword: null,
+      newPassword: null
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const _e$target = e.target,
+          id = _e$target.id,
+          value = _e$target.value;
+    this.setState({
+      [id]: value
+    });
+  }
+
+  handlePasswordSubmit(e) {
+    e.preventDefault();
+    const _this$state = this.state,
+          oldPassword = _this$state.oldPassword,
+          newPassword = _this$state.newPassword;
+
+    if (!oldPassword || !newPassword) {
+      this.growl.show({
+        severity: 'error',
+        summary: 'Error!!',
+        detail: 'Field/s should not be blank to Change Password!!'
+      });
+    } else {
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].changePassword(this.state._id, oldPassword, newPassword).then(data => {
+        if (data.error) {
+          this.growl.show({
+            severity: 'error',
+            summary: 'Error!!',
+            detail: data.error
+          });
+        } else {
+          this.growl.show({
+            severity: 'success',
+            summary: 'Success!!',
+            detail: data.message
+          });
+        }
+      });
+    }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const _this$state2 = this.state,
+          firstName = _this$state2.firstName,
+          lastName = _this$state2.lastName,
+          email = _this$state2.email;
+
+    if (!firstName || !lastName || !email) {
+      this.growl.show({
+        severity: 'error',
+        summary: 'Error!!',
+        detail: 'Field/s should not be blank to create a user!!'
+      });
+    } else {
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].updateUser(this.state).then(data => {
+        if (data.error) {
+          this.growl.show({
+            severity: 'error',
+            summary: 'Error!!',
+            detail: data.error
+          });
+        } else {
+          const _ref = this.props.location.state || {
+            from: {
+              pathname: "/users"
+            }
+          },
+                from = _ref.from;
+
+          localStorage.setItem('success', JSON.stringify("User has been Updated!!!"));
+          this.props.history.push(from);
+        }
+      });
+    }
+  }
+
+  componentDidMount() {
+    let id = null;
+    console.log(this.props.location.changePassword);
+
+    if (this.props.location.rowData) {
+      id = this.props.location.rowData._id;
+      _service_UserService__WEBPACK_IMPORTED_MODULE_3__["userService"].getUser(id).then(data => {
+        this.setState({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          userName: data.userName,
+          password: data.password,
+          email: data.email,
+          _id: data.id
+        });
+      });
+    } else {
+      this.props.history.push({
+        pathname: '/users'
+      });
+    }
+  }
+
+  render() {
+    const _this$state3 = this.state,
+          newPassword = _this$state3.newPassword,
+          oldPassword = _this$state3.oldPassword;
+    const _this$state4 = this.state,
+          firstName = _this$state4.firstName,
+          lastName = _this$state4.lastName,
+          email = _this$state4.email;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12 p-lg-6",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 119
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      to: "/users",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      label: "Back",
+      icon: "pi pi-arrow-left",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 121
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 123
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_growl__WEBPACK_IMPORTED_MODULE_6__["Growl"], {
+      ref: el => this.growl = el,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_panel__WEBPACK_IMPORTED_MODULE_5__["Panel"], {
+      header: "Edit User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 125
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handleSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-grid",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 127
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "firstName",
+      defaultValue: firstName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "FirstName",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 128
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "lastName",
+      defaultValue: lastName,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "LastName",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 134
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "email",
+      defaultValue: email,
+      style: {
+        margin: 20
+      },
+      type: "text",
+      placeholder: "Email",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 146
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      type: "submit",
+      label: "Update User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 148
+      },
+      __self: this
+    }))))), this.props.location.changePassword === true & react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_panel__WEBPACK_IMPORTED_MODULE_5__["Panel"], {
+      header: "Edit User",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 154
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      onSubmit: this.handlePasswordSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 155
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-grid",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 156
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "oldPassword",
+      defaultValue: oldPassword,
+      style: {
+        margin: 20
+      },
+      type: "password",
+      placeholder: "Old Password",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 157
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_inputtext__WEBPACK_IMPORTED_MODULE_4__["InputText"], {
+      id: "newPassword",
+      defaultValue: newPassword,
+      style: {
+        margin: 20
+      },
+      type: "password",
+      placeholder: "New Password",
+      onChange: this.handleChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 163
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "p-col-12",
+      style: {
+        margin: 20
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 169
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(primereact_button__WEBPACK_IMPORTED_MODULE_7__["Button"], {
+      type: "submit",
+      label: "Update Password",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 171
+      },
+      __self: this
+    })))))));
+  }
+
+}
+;
+/* harmony default export */ __webpack_exports__["default"] = (EditUsers);
+
+/***/ })
+
+})
+//# sourceMappingURL=main.752b3232ebe69c74b9c9.hot-update.js.map

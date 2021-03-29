@@ -7,11 +7,14 @@ export const handleResponse = function (response) {
         if (!response.ok) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
-                sessionStorage.removeItem('accessToken');
+                sessionStorage.removeItem('token');
                 sessionStorage.removeItem('refreshToken');
+                sessionStorage.removeItem('userName');
+                sessionStorage.removeItem('role');
                 window.location.reload();
             }
-            const error = (data && data.message) || response.statusText;
+            console.log(data);
+            const error = (data && data.error) || response.status;
             return Promise.reject(error);
         }
         return data;

@@ -10,6 +10,7 @@ import {Panel} from 'primereact/panel';
 import {Growl} from 'primereact/growl';
 import {Button} from 'primereact/button';
 import {Dropdown} from 'primereact/dropdown';
+import {roleService} from "../../service/RoleService";
 
 export class EditUsers extends Component {
     constructor(props) {
@@ -30,43 +31,56 @@ export class EditUsers extends Component {
 
     handlePasswordSubmit(e) {
         e.preventDefault();
-        const {oldPassword, newPassword} = this.state;
-        if (!oldPassword || !newPassword) {
+        const {oldPassword, newPassword, confirmPassword} = this.state;
+        if (!oldPassword || !newPassword || !confirmPassword) {
             this.growl.show({
                 severity: 'error',
                 summary: 'Error!!',
                 detail: 'Field/s should not be blank to Change Password!!'
             });
 
+        } else if (oldPassword === newPassword) {
+            this.growl.show({
+                severity: 'error',
+                summary: 'Error!!',
+                detail: 'Old Password cannot be same as New Password!!'
+            });
+
+        } else if (confirmPassword !== newPassword) {
+            this.growl.show({
+                severity: 'error',
+                summary: 'Error!!',
+                detail: 'New Password and Confirm Password is not matching!!'
+            });
+
         } else {
-            userService.changePassword(this.state._id, oldPassword, newPassword)
+            userService.changePassword(this.state.userName, oldPassword, newPassword)
                 .then(
                     data => {
-                        if (data.error) {
-                            this.growl.show({
-                                severity: 'error',
-                                summary: 'Error!!',
-                                detail: data.error
-                            });
-                        } else {
-                            this.growl.show({
-                                severity: 'success',
-                                summary: 'Success!!',
-                                detail: data.message
-                            });
-                            this.setState({oldPassword: '', newPassword: ''});
-                            document.getElementById('oldPassword').value = '';
-                            document.getElementById('newPassword').value = '';
-                        }
+                        this.growl.show({
+                            severity: 'success',
+                            summary: 'Success!!',
+                            detail: data.message
+                        });
+                        this.setState({oldPassword: '', newPassword: '', confirmPassword: ''});
+                        document.getElementById('oldPassword').value = '';
+                        document.getElementById('newPassword').value = '';
+                        document.getElementById('confirmPassword').value = '';
                     }
-                );
+                ).catch(e => {
+                this.growl.show({
+                    severity: 'error',
+                    summary: 'Error!!',
+                    detail: 'Password Change Unsuccessful!!'
+                });
+            });
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const {firstName, lastName, email} = this.state;
-        if (!firstName || !lastName || !email) {
+        const {firstName, lastName, email, roles} = this.state;
+        if (!firstName || !lastName || !email || !roles) {
             this.growl.show({
                 severity: 'error',
                 summary: 'Error!!',
@@ -80,16 +94,7 @@ export class EditUsers extends Component {
                 detail: 'Email pattern is not a match!! Use xxxx@xxxx.xxx'
             });
         } else {
-            if (this.state.permissionLevel.code) {
-                let code = this.state.permissionLevel.code;
-                this.setState({permissionLevel: code}, () => {
-                    this.userUpdate(this.state);
-                });
-            } else {
-                this.userUpdate(this.state);
-            }
-
-
+            this.userUpdate(this.state);
         }
     }
 
@@ -114,33 +119,38 @@ export class EditUsers extends Component {
     }
 
     componentDidMount() {
-        let id = null;
+        let uname = null;
         if (this.props.location.rowData) {
-            id = this.props.location.rowData._id;
-            userService.getUser(id).then(data => {
+            uname = this.props.location.rowData.userName;
+            userService.getUserByUname(uname).then(data => {
                 this.setState({
                     firstName: data.firstName,
                     lastName: data.lastName,
                     email: data.email,
-                    permissionLevel: data.permissionLevel,
-                    _id: data.id,
+                    client: data.client,
+                    id: data.id,
+                    roles: data.roles,
+                    userName: data.userName
                 });
             });
+            if (JSON.parse(sessionStorage.getItem('role')) & 1) {
+                roleService.getRoles()
+                    .then(data => {
+                            this.setState({roleNames: data});
+                        }
+                    );
+            }
         } else {
             this.props.history.push({pathname: '/users'});
         }
     }
 
     render() {
-        const permissions = [
-            {name: 'Admin', code: "2048"},
-            {name: 'Paid', code: "4"},
-            {name: 'Normal', code: "1"}];
-        const {newPassword, oldPassword} = this.state;
-        const {firstName, lastName, email, permissionLevel} = this.state;
+        const {newPassword, oldPassword, confirmPassword} = this.state;
+        const {firstName, lastName, email, roles} = this.state;
         return (
             <div>
-                <Navigation />
+                <Navigation/>
                 <p></p>
                 <div className="p-col-12 p-lg-6">
                     <NavLink to="/users">
@@ -169,14 +179,13 @@ export class EditUsers extends Component {
                                            type="text"
                                            placeholder="Email"
                                            onChange={this.handleChange}/>
-                                {sessionStorage.getItem('permissionLevel') & 2048 ?
-                                    <Dropdown id="permissionLevel"
-                                              value={permissionLevel}
-                                              options={permissions}
+                                {JSON.parse(sessionStorage.getItem('role')) & 1 ?
+                                    <Dropdown id="roles"
+                                              value={roles}
+                                              options={this.state.roleNames}
                                               onChange={this.handleChange}
-                                              placeholder={permissionLevel === 4 ? permissions.find((o) => o.code === '4').name
-                                                  : (permissionLevel === 2048 ? permissions.find((o) => o.code === '2048').name : permissions.find((o) => o.code === '1').name)}
-                                              optionLabel="name"/>
+                                              placeholder={toString(this.state.roles)}
+                                              optionLabel="roleName"/>
                                     : null}
                                 <div className="p-col-12"
                                      style={{margin: 20}}>
@@ -200,6 +209,12 @@ export class EditUsers extends Component {
                                                style={{margin: 20}}
                                                type="password"
                                                placeholder="New Password"
+                                               onChange={this.handleChange}/>
+                                    <InputText id="confirmPassword"
+                                               defaultValue={confirmPassword}
+                                               style={{margin: 20}}
+                                               type="password"
+                                               placeholder="Confirm Password"
                                                onChange={this.handleChange}/>
                                     <div className="p-col-12"
                                          style={{margin: 20}}>

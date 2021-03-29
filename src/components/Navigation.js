@@ -28,6 +28,7 @@ export class Navigation extends Component {
                         <li><NavLink to="/home">Home</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/users">Users</NavLink></li>
+                        <li><NavLink to="/roles">Roles</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                         <li style={{float: "right"}}>
                             <NavLink to="/logout"

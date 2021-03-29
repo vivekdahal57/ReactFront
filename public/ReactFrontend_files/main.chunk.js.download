@@ -2051,7 +2051,7 @@ async function login(userName, password) {
     }) //this is for post request
 
   };
-  const response = await fetch('http://localhost:3601/auth', requestOptions);
+  const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/auth', requestOptions);
   const requestData = await Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
 
   if (requestData.accessToken) {
@@ -2078,7 +2078,7 @@ async function getAll() {
       method: 'GET',
       headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])()
     };
-    const response = await fetch('http://localhost:3601/users?limit=9999', requestOptions);
+    const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/users?limit=9999', requestOptions);
     return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
   }
 
@@ -2091,7 +2091,7 @@ async function getUser(_id) {
       method: 'GET',
       headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])()
     };
-    const response = await fetch('http://localhost:3601/users/' + _id, requestOptions);
+    const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/users/' + _id, requestOptions);
     return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
   }
 
@@ -2105,7 +2105,7 @@ async function createUser(userObject) {
       headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
       body: JSON.stringify(userObject)
     };
-    const response = await fetch('http://localhost:3601/users', requestOptions);
+    const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/users', requestOptions);
     return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
   }
 
@@ -2118,7 +2118,7 @@ async function deleteUser(_id) {
       method: 'DELETE',
       headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])()
     };
-    const response = await fetch('http://localhost:3601/users/' + _id, requestOptions);
+    const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/users/' + _id, requestOptions);
     return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
   }
 
@@ -2132,7 +2132,7 @@ async function updateUser(userObject) {
       headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
       body: JSON.stringify(userObject)
     };
-    const response = await fetch('http://localhost:3601/users/' + userObject._id, requestOptions);
+    const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/users/' + userObject._id, requestOptions);
     return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
   }
 
@@ -2146,7 +2146,7 @@ async function changePassword(_id, oldPassword, newPassword) {
       headers: Object(_helper_auth_header__WEBPACK_IMPORTED_MODULE_0__["authHeader"])(),
       body: JSON.stringify(oldPassword, newPassword)
     };
-    const response = await fetch('http://localhost:3601/users/changePassword/' + _id, requestOptions);
+    const response = await fetch('http://127.0.0.1:8080/api/v1/CMS/users/changePassword/' + _id, requestOptions);
     return Object(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"])(response);
   }
 
@@ -2162,7 +2162,7 @@ async function getAccessToken() {
     }) //this is for post request
 
   };
-  await fetch('http://localhost:3601/auth/refresh', requestOptions).then(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"]).then(response => {
+  await fetch('http://127.0.0.1:8080/api/v1/CMS/auth/refresh', requestOptions).then(_ResponseService__WEBPACK_IMPORTED_MODULE_1__["handleResponse"]).then(response => {
     localStorage.setItem('refreshToken', JSON.stringify(response.refreshToken));
     localStorage.setItem('accessToken', JSON.stringify(response.accessToken));
   });

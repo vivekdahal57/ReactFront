@@ -21,6 +21,17 @@ export class Login extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
+    componentDidMount() {
+        let message = JSON.parse(sessionStorage.getItem('success'));
+        if (message) {
+            this.growl.show({
+                severity: 'success',
+                summary: 'Success!!',
+                detail: message
+            })
+            sessionStorage.removeItem('success');
+        };
+    }
 
     handleChange(e) {
         const {id, value} = e.target;
@@ -92,6 +103,7 @@ export class Login extends Component {
         );
     };
 }
+
 export default Login;
 
 /*<div className="p-col-12"

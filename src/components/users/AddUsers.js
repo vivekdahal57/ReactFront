@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import Navigation from '../Navigation';
 import {userService} from '../../service/UserService';
+import {roleService} from '../../service/RoleService';
 import {InputText} from 'primereact/inputtext';
 import {Panel} from 'primereact/panel';
 import {Growl} from 'primereact/growl';
@@ -20,11 +21,19 @@ export class AddUsers extends Component {
             userName: null,
             password: null,
             email: null,
-            permissionLevel: null,
-
+            roles: null,
+            roleNames: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount() {
+        roleService.getRoles()
+            .then(data => {
+                    this.setState({roleNames: data});
+                }
+            );
     }
 
     handleChange(e) {
@@ -34,8 +43,8 @@ export class AddUsers extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const {firstName, lastName, userName, password, email, permissionLevel} = this.state;
-        if (!firstName || !lastName || !userName || !password || !email || !permissionLevel) {
+        const {firstName, lastName, userName, password, email, roles} = this.state;
+        if (!firstName || !lastName || !userName || !password || !email || !roles) {
             this.growl.show({
                 severity: 'error',
                 summary: 'Error!!',
@@ -49,38 +58,27 @@ export class AddUsers extends Component {
                 detail: 'Email pattern is not a match!! Use xxxx@xxxx.xxx'
             });
         } else {
-            let code = this.state.permissionLevel.code;
-            this.setState({permissionLevel: code}, () => {
-                userService.createUser(this.state)
-                    .then(
-                        data => {
-                            if (data.error) {
-                                this.growl.show({
-                                    severity: 'error',
-                                    summary: 'Error!!',
-                                    detail: data.error
-                                })
-                            } else {
-                                const {from} = this.props.location.state || {from: {pathname: "/users"}};
-                                sessionStorage.setItem('success', JSON.stringify("User has been created!!!"));
-                                this.props.history.push(from);
-                            }
-                        }
-                    );
+            userService.createUser(this.state)
+                .then(data => {
+                        const {from} = this.props.location.state || {from: {pathname: "/users"}};
+                        sessionStorage.setItem('success', JSON.stringify("User has been created!!!"));
+                        this.props.history.push(from);
+                    }
+                ).catch(e => {
+                this.growl.show({
+                    severity: 'error',
+                    summary: 'Error!!',
+                    detail: e
+                });
             });
-
         }
     }
 
     render() {
-        const {firstName, lastName, userName, password, email, permissionLevel} = this.state;
-        const permissions = [
-            {name: 'Admin', code: "2048"},
-            {name: 'Paid', code: "4"},
-            {name: 'Normal', code: "1"}];
+        const {firstName, lastName, userName, password, email, roles} = this.state;
         return (
             <div>
-                <Navigation />
+                <Navigation/>
                 <p></p>
                 <div className="p-col-12 p-lg-6">
                     <NavLink to="/users">
@@ -121,12 +119,12 @@ export class AddUsers extends Component {
                                            type="text"
                                            placeholder="Email"
                                            onChange={this.handleChange}/>
-                                <Dropdown id="permissionLevel"
-                                          value={permissionLevel}
-                                          options={permissions}
+                                <Dropdown id="roles"
+                                          value={roles}
+                                          options={this.state.roleNames}
                                           onChange={this.handleChange}
                                           placeholder="Select a Role"
-                                          optionLabel="name"/>
+                                          optionLabel="roleName"/>
                                 <div className="p-col-12"
                                      style={{margin: 20}}>
                                     <Button type="submit" label="Add User"/>
@@ -138,7 +136,6 @@ export class AddUsers extends Component {
             </div>
         );
     }
-}
-;
+};
 
 export default AddUsers;

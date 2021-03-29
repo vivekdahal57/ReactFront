@@ -1,7 +1,7 @@
 /**
  * Created by i82325 on 5/6/2019.
  */
-import React, {Component} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 import Navigation from '../Navigation';
 import {userService} from '../../service/UserService';
@@ -11,7 +11,7 @@ import {Button} from 'primereact/button';
 import {Growl} from 'primereact/growl';
 import {InputText} from 'primereact/inputtext';
 
-export class Users extends Component {
+export class Users extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -21,7 +21,10 @@ export class Users extends Component {
     }
 
     componentDidMount() {
-        userService.getAll().then(data => this.setState({users: data}));
+        userService.getAll().then(data => {
+                this.setState({users: data});
+            }
+        );
         let message = JSON.parse(sessionStorage.getItem('success'));
         if (message) {
             this.growl.show({
@@ -30,7 +33,7 @@ export class Users extends Component {
                 detail: message
             })
             sessionStorage.removeItem('success');
-        }
+        };
     }
 
     actionTemplate(rowData) {
@@ -39,13 +42,15 @@ export class Users extends Component {
             justifyContent: 'center',
             alignItems: 'center',
         }}>
-            {(JSON.parse(sessionStorage.getItem('userId')) === rowData._id || sessionStorage.getItem('permissionLevel') === '2048' ) ?
+
+            {(JSON.parse(sessionStorage.getItem('userName')) === rowData.userName ||
+                JSON.parse(sessionStorage.getItem('role')) === ('1' | 1)) ?
                 <Button type="button" icon="pi pi-pencil" style={{margin: 2}}
                         className="ui-button-success"
                         onClick={() => this.editUser(rowData)}
                 />
                 : null}
-            {sessionStorage.getItem('permissionLevel') & 2048 ?
+            {JSON.parse(sessionStorage.getItem('role')) & 1 ?
                 <Button type="submit" icon="pi pi-trash"
                         className="ui-button-warning"
                         onClick={() => this.deleteUser(rowData)}
@@ -56,7 +61,7 @@ export class Users extends Component {
 
     editUser(rowData) {
         let changePassword = null;
-        if (JSON.parse(sessionStorage.getItem('userId')) === rowData._id) {
+        if (JSON.parse(sessionStorage.getItem('userName')) === rowData.userName) {
             changePassword = true;
         } else {
             changePassword = false;
@@ -70,8 +75,8 @@ export class Users extends Component {
 
 
     deleteUser(rowData) {
-        var msg = 'Are you sure You want to delete user ' + rowData._id;
-        if (window.confirm(msg)) {
+        let message = 'Are you sure You want to delete user ' + rowData._id;
+        if (window.confirm(message)) {
             userService.deleteUser(rowData._id).then(() => {
                 this.growl.show({
                     severity: 'success',
@@ -84,27 +89,16 @@ export class Users extends Component {
     }
 
     render() {
-        var header = <div style={{'textAlign': 'left', 'float': 'right'}}>
+        let header = <div style={{'textAlign': 'left', 'float': 'right'}}>
             <i className="pi pi-search" style={{margin: '4px 4px 0 0'}}></i>
             <InputText type="search"
                        onInput={(e) => this.setState({globalFilter: e.target.value})}
                        placeholder="Search" size="50"/>
         </div>;
-        this.state.users.forEach(function (item) {
-            if (item.permissionLevel === 2048 || item.permissionLevel === '2048') {
-                item.permissionLevel = 'Admin';
-            } else if (item.permissionLevel === 1 || item.permissionLevel === '1') {
-                item.permissionLevel = 'Normal';
-            } else if (item.permissionLevel === 4 || item.permissionLevel === '4') {
-                item.permissionLevel = 'Premium';
-            }
-        });
-
         return (
-
             <div>
                 <Growl ref={(el) => this.growl = el}/>
-                <Navigation />
+                <Navigation/>
                 <p></p>
                 <div className="p-col-12 p-lg-6">
                     <NavLink to="/addUser">
@@ -129,10 +123,10 @@ export class Users extends Component {
                             <Column field="email" header="Email"
                                     sortable={true}
                                     style={{overflow: 'hidden'}}/>
-                            <Column field="permissionLevel" header="Permission"
+                            <Column field="roles.roleName" header="Role"
                                     sortable={true}
                                     style={{overflow: 'hidden'}}/>
-                            {sessionStorage.getItem('permissionLevel') & (4 | 2048) ?
+                            {JSON.parse(sessionStorage.getItem('role')) & (1 | 2) ?
                                 <Column body={this.actionTemplate}
                                         header="Actions"/>
                                 : <Column body={this.actionTemplate}
@@ -145,7 +139,6 @@ export class Users extends Component {
             </div>
         );
     }
-}
-;
+};
 
 export default Users;

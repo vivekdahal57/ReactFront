@@ -24,7 +24,8 @@ function App() {
                 {JSON.parse(sessionStorage.getItem('userName')) &&
                 <Route path="/" exact component={Home}/>}
                 <PrivateRoute path="/home" component={Home}/>
-                <PrivateRoute path="/roles" component={Roles}/>
+                {JSON.parse(sessionStorage.getItem('role')) === (1||'1') &&
+                <PrivateRoute path="/roles" component={Roles}/>}
                 <PrivateRoute path="/about" component={About}/>
                 <PrivateRoute path="/contact" component={Contact}/>
                 <PrivateRoute path="/users" component={Users}/>
